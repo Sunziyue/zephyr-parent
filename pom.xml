@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>xyz.sunziyue.zephyr</groupId>
+    <artifactId>zephyr-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <hutool.version>5.4.2</hutool.version>
+        <guava-version>30.1.1-jre</guava-version>
+        <lombok.version>1.16.22</lombok.version>
+        <fastjson.version>1.2.70</fastjson.version>
+        <commons-io.version>2.5</commons-io.version>
+        <commons-lang.version>3.4</commons-lang.version>
+        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
+        <testcontainers.version>1.15.0</testcontainers.version>
+        <srping.mybatis.starter.version>1.5.3.RELEASE</srping.mybatis.starter.version>
+        <mysql.connect.version>5.1.46</mysql.connect.version>
+        <zephyr.starter.version>2.3.0.RELEASE</zephyr.starter.version>
+        <zephyr.dubbo.version>1.0.0.SNAPSHOT</zephyr.dubbo.version>
+
+        <dubbo.version>1.0.2.5.RELEASE</dubbo.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- RPC -->
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>dubbo-consumer</artifactId>
+                <version>${zephyr.dubbo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>dubbo-provider</artifactId>
+                <version>${zephyr.dubbo.version}</version>
+            </dependency>
+            <!-- RPC -->
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.70</version>
+            </dependency>
+
+            <!--spring start-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring end-->
+
+            <!--spring web container start-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jetty</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <!--spring web container end-->
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connect.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
+
+            <!-- 增加hutool工具包 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+
+            <!-- zephyr-starter -->
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-elastic-job-starter</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-mybatis-starter</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-redis-starter</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-rocket-mq-starter</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-swagger-starter</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>xyz.sunziyue</groupId>
+                <artifactId>zephyr-spring-boot-common</artifactId>
+                <version>${zephyr.starter.version}</version>
+            </dependency>
+            <!-- zephyr-starter -->
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>admin</id>
+            <name>jjy release repository</name>
+            <url>http://nexus.jjyyx.com/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>admin</id>
+            <name>jjy snapshot repository</name>
+            <url>http://nexus.jjyyx.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
