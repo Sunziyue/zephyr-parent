@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hutool.version>5.4.2</hutool.version>
         <guava-version>30.1.1-jre</guava-version>
         <lombok.version>1.16.22</lombok.version>
@@ -22,8 +23,6 @@
         <mysql.connect.version>5.1.46</mysql.connect.version>
         <zephyr.starter.version>2.3.0.RELEASE</zephyr.starter.version>
         <zephyr.dubbo.version>1.0.0.SNAPSHOT</zephyr.dubbo.version>
-
-        <dubbo.version>1.0.2.5.RELEASE</dubbo.version>
     </properties>
 
     <dependencyManagement>
